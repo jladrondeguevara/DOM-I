@@ -6,6 +6,12 @@ const siteContent = {
     "nav-item-4": "Features",
     "nav-item-5": "About",
     "nav-item-6": "Contact",
+    "page-src-1": "services.html",
+    "page-src-2": "product.html",
+    "page-src-3": "vision.html",
+    "page-src-4": "features.html",
+    "page-src-5": "about.html",
+    "page-src-6": "contact.html",
     "img-src": "img/logo.png"
   },
   "cta": {
@@ -47,10 +53,17 @@ const contact = document.getElementsByClassName('contact');
 const nav = document.getElementsByTagName('nav');
 const logoImg = document.getElementById('logo-img');
 const ctaImg = document.getElementById('cta-img');
-const middleImg = document.getElementById('middle-img');
-
 ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+const middleImg = document.getElementById('middle-img');
 middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+const h1 = document.querySelector('h1');
+h1.textContent = siteContent['cta']['h1'];
+const navLinks = document.querySelectorAll('nav a')
+for(let i = 0; i < navLinks.length; i++)
+{
+  navLinks[i].textContent = siteContent['nav'][`nav-item-${i+1}`];
+  navLinks[i].setAttribute('href', siteContent['nav'][`page-src-${i+1}`]);
+}
 
-
-
+const btn = document.querySelector('button');
+btn.textContent = siteContent["cta"]["button"];
