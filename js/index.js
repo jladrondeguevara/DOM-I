@@ -49,3 +49,8 @@ const logoImg = document.getElementById('logo-img');
 const ctaImg = document.getElementById('cta-img');
 const middleImg = document.getElementById('middle-img');
 
+ctaImg.setAttribute('src', siteContent['cta']['img-src']);
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+
+
+
